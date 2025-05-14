@@ -96,13 +96,11 @@ function updateDisplay(){
     } else{
         displayed = operationObj.result;
         displayed = displayed.toString();
+        if (displayed.length > 11){
+            num = Math.floor(parseFloat(displayed));
+            displayed = num.toString();
+        }
     }
-
-    if (displayed.length > 11){
-        num = Math.floor(parseFloat(displayed));
-        displayed = num.toString();
-    }
-
     display.textContent = displayed;
 }
 

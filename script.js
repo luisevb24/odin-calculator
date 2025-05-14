@@ -90,12 +90,24 @@ function divide(a, b){
 
 
 function updateDisplay(){
-    if (operationObj.result === null){
-    display.textContent = `${operationObj.a} ${operationObj.operator} ${operationObj.b}`;}
-    else{
-        display.textContent = operationObj.result;
+    let displayed;
+    if (operationObj.result === null){  
+        displayed =`${operationObj.a} ${operationObj.operator} ${operationObj.b}`
+    } else{
+        displayed = operationObj.result;
+        displayed = displayed.toString();
     }
+
+    if (displayed.length > 11){
+        num = Math.floor(parseFloat(displayed));
+        displayed = num.toString();
+    }
+
+    display.textContent = displayed;
 }
+
+
+
 function storeNumbers(pressed){
     if (operationObj.operator == ''){
         operationObj.a += pressed;

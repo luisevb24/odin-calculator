@@ -41,8 +41,17 @@ buttonsNodeL.forEach(button => button.addEventListener('click', () => {
 ));
 
 operatorsNodel.forEach(operator => operator.addEventListener('click', () => {
+    if(operationObj.operator != '') {
+        operationObj.operate();
+        let prevResult = operationObj.result;
+        clearObj();
+        operationObj.a = prevResult;
+        operationObj.operator = operator.textContent;
+        updateDisplay();
+    } else {
     operationObj.operator = operator.textContent;
-    updateDisplay();
+    updateDisplay();}
+    
 }))
 
 resultButton.addEventListener('click', () => { 
@@ -96,7 +105,4 @@ function clearObj(){
     operationObj.operator = '';
     operationObj.result = null;
 }
-//get entered digit
-//declare 2 variables for names
-
 console.log(operationObj)

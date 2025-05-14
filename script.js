@@ -25,7 +25,7 @@ let operationObj = {
     result: null,
 
 }
-const display = document.querySelector(".display");
+const display = document.querySelector(".display p");
 let displayNumber;
 const buttonsNodeL = document.querySelectorAll('.digits button');
 const operatorsNodel = document.querySelectorAll('.operators button')

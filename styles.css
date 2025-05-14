@@ -60,6 +60,11 @@ h1 {
     font-size: medium;
 }
 
+.digits .dot{
+    font-size: xx-large;
+    padding-bottom: 30px;
+}
+
 button {
     background-color: rgb(100, 99, 99);
     color: white;

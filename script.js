@@ -27,13 +27,19 @@ let operationObj = {
 }
 const display = document.querySelector(".display p");
 let displayNumber;
-const buttonsNodeL = document.querySelectorAll('.digits button');
+const buttonsNodeL = document.querySelectorAll('.digits .digit');
 const operatorsNodel = document.querySelectorAll('.operators button')
 const resultButton = document.querySelector('.result');
 const clearButton = document.querySelector('.clear');
+const dotButton = document.querySelector('.dot');
 
-
-
+dotButton.addEventListener('click', () => {
+    if (operationObj.a.indexOf('.') === -1 && operationObj.b.indexOf('.') === -1)
+{
+        storeNumbers(dotButton.textContent);
+        updateDisplay();
+    }
+})
 buttonsNodeL.forEach(button => button.addEventListener('click', () => {
     storeNumbers(button.textContent);
     updateDisplay();
@@ -90,8 +96,6 @@ function updateDisplay(){
         display.textContent = operationObj.result;
     }
 }
-
-
 function storeNumbers(pressed){
     if (operationObj.operator == ''){
         operationObj.a += pressed;
@@ -105,4 +109,3 @@ function clearObj(){
     operationObj.operator = '';
     operationObj.result = null;
 }
-console.log(operationObj)

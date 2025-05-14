@@ -3,11 +3,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: darkgray;
+    background-color: rgb(182, 190, 194);
 }
 
 h1 {
     text-align: center;
+    font-family: 'Orbitron';
 }
 
 .container {
@@ -38,19 +39,25 @@ h1 {
     margin: 0;
     margin-right: 20px;
     font-size: x-large;
+    font-family: 'Orbitron';
 }
 
 .buttons {
     display: flex;
-
+    justify-content: center;
 }
 
 .digits {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 5px;
     flex-grow: 0;
+}
+.digits button{
+    width:40px;
+    height: 50px;
+    font-size: medium;
 }
 
 button {
@@ -58,8 +65,8 @@ button {
     color: white;
     padding: 10px;
     border-radius: 3px;
-    font-size: xx-large;
-    
+    font-size: large;
+    font-family: 'Orbitron';
 }
 
 .actions {
